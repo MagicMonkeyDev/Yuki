@@ -77,8 +77,46 @@ class Terminal {
             return;
         }
 
-        this.addToOutput(`You: ${input}`, 'user');
-        this.addToOutput('AI: This is a test response.', 'ai');
+        try {
+            this.addToOutput(`You: ${input}`, 'user');
+            this.addToOutput('AI is typing...', 'system');
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    messages: [
+                        ...this.chatHistory,
+                        { role: "user", content: input }
+                    ]
+                })
+            });
+
+            const data = await response.json();
+            
+            // Remove the "AI is typing..." message
+            this.output.removeChild(this.output.lastChild);
+
+            if (data.error) {
+                throw new Error(data.error);
+            }
+
+            const aiResponse = data.choices[0].message.content;
+            this.addToOutput(`AI: ${aiResponse}`, 'ai');
+
+            // Update chat history
+            this.chatHistory.push(
+                { role: "user", content: input },
+                { role: "assistant", content: aiResponse }
+            );
+
+        } catch (error) {
+            console.error('Chat error:', error);
+            this.output.removeChild(this.output.lastChild); // Remove "AI is typing..."
+            this.addToOutput('Error: Could not get a response from AI.', 'error');
+        }
     }
 
     addToOutput(text, type = 'normal') {
