@@ -1035,23 +1035,57 @@ body {
 
 .terminal-line.user {
     color: #50fa7b;
-    padding: 5px 0;
+    padding: 8px 0;
+    margin: 4px 0;
+    background: rgba(80, 250, 123, 0.1);
+    border-left: 3px solid #50fa7b;
+    padding-left: 10px;
 }
 
 .terminal-line.ai {
     color: #ff79c6;
-    padding: 5px 0;
-}
-
-.terminal-line.error {
-    color: #ff5555;
-    padding: 5px 0;
+    padding: 8px 0;
+    margin: 4px 0;
+    background: rgba(255, 121, 198, 0.1);
+    border-left: 3px solid #ff79c6;
+    padding-left: 10px;
 }
 
 .terminal-line.system {
     color: #bd93f9;
-    padding: 5px 0;
+    padding: 8px 0;
+    margin: 4px 0;
     font-style: italic;
+    opacity: 0.8;
+}
+
+.terminal-line.error {
+    color: #ff5555;
+    padding: 8px 0;
+    margin: 4px 0;
+    background: rgba(255, 85, 85, 0.1);
+    border-left: 3px solid #ff5555;
+    padding-left: 10px;
+}
+
+.terminal-line {
+    border-radius: 4px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+
+.terminal-line:hover {
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.terminal-prompt {
+    color: #ff79c6;
+    margin-right: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 121, 198, 0.5);
 }
 
 .audio-controls {
