@@ -84,15 +84,21 @@ class Terminal {
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
                     messages: [
+                        { role: "system", content: "You are a helpful AI assistant." },
                         ...this.chatHistory,
                         { role: "user", content: input }
                     ]
                 })
             });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
             const data = await response.json();
             
@@ -115,7 +121,7 @@ class Terminal {
         } catch (error) {
             console.error('Chat error:', error);
             this.output.removeChild(this.output.lastChild); // Remove "AI is typing..."
-            this.addToOutput('Error: Could not get a response from AI.', 'error');
+            this.addToOutput(`Error: ${error.message}`, 'error');
         }
     }
 

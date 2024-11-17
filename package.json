@@ -2,9 +2,6 @@
   "name": "yuki",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "deploy": "vercel deploy"
-  },
   "dependencies": {
     "openai": "^4.0.0"
   }
