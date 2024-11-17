@@ -46,22 +46,9 @@ body::after {
 
 /* Terminal Styles */
 .terminal-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 800px;
-    height: 70vh;
-    background: rgba(26, 27, 36, 0.85);
-    border: 2px solid #ff79c6;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(255, 121, 198, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 1;
 }
 
 .terminal-output {
@@ -1028,4 +1015,57 @@ body {
     color: #bd93f9;
     padding: 5px 0;
     font-style: italic;
+}
+
+.audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(26, 27, 36, 0.85);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff79c6;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.play-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    color: #ff79c6;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-slider {
+    width: 100px;
+    height: 5px;
+    -webkit-appearance: none;
+    background: #ff79c6;
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #bd93f9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-icon {
+    font-size: 20px;
+    color: #ff79c6;
 }

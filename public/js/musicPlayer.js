@@ -1,59 +1,77 @@
 class SimpleAudioPlayer {
     constructor() {
-        // Remove any existing volume controls first
-        const existingControls = document.querySelectorAll('.volume-control-container');
-        existingControls.forEach(control => control.remove());
-
-        this.audio = new Audio('/public/music/Akari.mp3');
-        this.audio.volume = 0.2; // Start at 20% volume
+        // Create audio element
+        this.audio = new Audio();
+        this.audio.src = 'music/Akari.mp3'; // Updated path
+        this.audio.volume = 0.2;
         this.audio.loop = true;
+
+        // Create controls
+        this.createControls();
         
-        this.init();
-        this.setupSoundwaveSync();
+        // Auto-play setup with user interaction
+        document.addEventListener('click', () => {
+            this.playAudio();
+        }, { once: true });
     }
 
-    init() {
-        // Create only volume control HTML
-        const volumeControlHTML = `
-            <div class="volume-control-container">
-                <div class="volume-icon">🔊</div>
+    createControls() {
+        // Create container
+        const controls = document.createElement('div');
+        controls.className = 'audio-controls';
+        controls.innerHTML = `
+            <button class="play-button">▶️</button>
+            <div class="volume-control">
+                <span class="volume-icon">🔊</span>
                 <input type="range" class="volume-slider" min="0" max="100" value="20">
             </div>
         `;
-        
-        document.body.insertAdjacentHTML('beforeend', volumeControlHTML);
-        
-        this.volumeSlider = document.querySelector('.volume-slider');
-        
+
+        // Add to document
+        document.body.appendChild(controls);
+
+        // Setup event listeners
+        this.playButton = controls.querySelector('.play-button');
+        this.volumeSlider = controls.querySelector('.volume-slider');
+
+        this.playButton.addEventListener('click', () => this.togglePlay());
         this.volumeSlider.addEventListener('input', (e) => {
             this.audio.volume = e.target.value / 100;
         });
 
-        // Start playing when possible
-        document.addEventListener('click', () => {
-            this.audio.play().catch(console.error);
-        }, { once: true });
+        // Audio event listeners
+        this.audio.addEventListener('play', () => {
+            this.playButton.textContent = '⏸️';
+            this.updateSoundwave(true);
+        });
+
+        this.audio.addEventListener('pause', () => {
+            this.playButton.textContent = '▶️';
+            this.updateSoundwave(false);
+        });
     }
 
-    setupSoundwaveSync() {
-        const updateSoundwave = (isPlaying) => {
-            const spans = document.querySelectorAll('.soundwave span');
-            spans.forEach(span => {
-                span.style.animationPlayState = isPlaying ? 'running' : 'paused';
-            });
-        };
+    playAudio() {
+        this.audio.play().catch(error => console.log('Playback prevented:', error));
+    }
 
-        // Add event listeners for play/pause
-        this.audio.addEventListener('play', () => updateSoundwave(true));
-        this.audio.addEventListener('pause', () => updateSoundwave(false));
-        this.audio.addEventListener('ended', () => updateSoundwave(false));
+    togglePlay() {
+        if (this.audio.paused) {
+            this.playAudio();
+        } else {
+            this.audio.pause();
+        }
+    }
 
-        // Initial state
-        updateSoundwave(false);
+    updateSoundwave(isPlaying) {
+        const spans = document.querySelectorAll('.soundwave span');
+        spans.forEach(span => {
+            span.style.animationPlayState = isPlaying ? 'running' : 'paused';
+        });
     }
 }
 
-// Initialize audio player only once
-if (!window.audioPlayer) {
+// Initialize player
+document.addEventListener('DOMContentLoaded', () => {
     window.audioPlayer = new SimpleAudioPlayer();
-}
+});
