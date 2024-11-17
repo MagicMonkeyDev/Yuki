@@ -81,11 +81,13 @@ class Terminal {
             this.addToOutput(`You: ${input}`, 'user');
             this.addToOutput('AI is typing...', 'system');
 
-            const response = await fetch('/api/chat', {
+            // Get the current URL
+            const currentUrl = window.location.origin;
+            
+            const response = await fetch(`${currentUrl}/api/chat`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     messages: [
@@ -97,8 +99,8 @@ class Terminal {
             });
 
             if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(errorText || `HTTP error! status: ${response.status}`);
+                const errorData = await response.json();
+                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
             }
 
             const data = await response.json();
