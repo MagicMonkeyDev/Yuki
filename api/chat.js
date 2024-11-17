@@ -1,4 +1,4 @@
-const { Configuration, OpenAIApi } = require('openai');
+import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -20,9 +20,9 @@ module.exports = async (req, res) => {
             max_tokens: 150,
         });
 
-        res.status(200).json(completion.data);
+        return res.status(200).json(completion.data);
     } catch (error) {
         console.error('OpenAI API Error:', error);
-        res.status(500).json({ error: 'Failed to get response from ChatGPT' });
+        return res.status(500).json({ error: 'Failed to get response from ChatGPT' });
     }
-};
+}
