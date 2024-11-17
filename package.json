@@ -2,13 +2,13 @@
   "name": "yuki",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "next": "^12.3.4",
-    "openai": "^4.72.0"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
+  },
+  "dependencies": {
+    "next": "^12.3.4",
+    "openai": "^4.72.0"
   }
 }
