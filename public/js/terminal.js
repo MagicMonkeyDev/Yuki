@@ -36,13 +36,13 @@ class Terminal {
         // Welcome message with kawaii theme
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Yuki's Terminal! (◕‿◕✿)    │
+│     Welcome to Akari's Terminal! (◕‿◕✿)    │
 ╰──────────────────────────────────────────╯
 
 Available commands:
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃  help    ⋆｡°✩  Shows this help menu  
-┃  chat    ⋆｡°✩  Start chat with AI    
+┃  chat    ⋆｡°✩  Speak with Akari   
 ┃  clear   ⋆｡°✩  Clear terminal screen  
 ┃  about   ⋆｡°✩  About Yuki              
 ┃  exit    ⋆｡°✩  Exit current mode       
