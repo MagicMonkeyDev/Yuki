@@ -971,3 +971,30 @@ body {
     align-items: center;
     transition: all 0.3s ease;
 }
+
+.clock-time {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    color: #ff79c6;
+    text-shadow: 0 0 5px rgba(255, 121, 198, 0.5);
+    margin-bottom: 5px;
+}
+
+.clock-date {
+    font-size: 12px;
+    color: #bd93f9;
+    margin-top: 2px;
+}
+
+.clock-face {
+    font-size: 14px;
+    margin-top: 2px;
+    color: #ff79c6;
+}
+
+/* Hover effect */
+.clock-container:hover {
+    border-color: #bd93f9;
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
+    transform: translateY(-2px);
+}
