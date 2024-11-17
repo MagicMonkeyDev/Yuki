@@ -954,3 +954,20 @@ body {
     font-size: 1.2em;
     margin: 0 3px;
 }
+
+.clock-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(26, 27, 36, 0.9);
+    border: 2px solid #ff79c6;
+    border-radius: 15px;
+    padding: 12px 20px;
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    box-shadow: 0 0 15px rgba(255, 121, 198, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
