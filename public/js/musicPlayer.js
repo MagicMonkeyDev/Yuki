@@ -9,6 +9,7 @@ class SimpleAudioPlayer {
         this.audio.loop = true;
         
         this.init();
+        this.setupSoundwaveSync();
     }
 
     init() {
@@ -33,21 +34,26 @@ class SimpleAudioPlayer {
             this.audio.play().catch(console.error);
         }, { once: true });
     }
+
+    setupSoundwaveSync() {
+        const updateSoundwave = (isPlaying) => {
+            const spans = document.querySelectorAll('.soundwave span');
+            spans.forEach(span => {
+                span.style.animationPlayState = isPlaying ? 'running' : 'paused';
+            });
+        };
+
+        // Add event listeners for play/pause
+        this.audio.addEventListener('play', () => updateSoundwave(true));
+        this.audio.addEventListener('pause', () => updateSoundwave(false));
+        this.audio.addEventListener('ended', () => updateSoundwave(false));
+
+        // Initial state
+        updateSoundwave(false);
+    }
 }
 
 // Initialize audio player only once
 if (!window.audioPlayer) {
     window.audioPlayer = new SimpleAudioPlayer();
 }
-
-// Add this to your existing music player code
-function updateSoundwave(isPlaying) {
-    const spans = document.querySelectorAll('.soundwave span');
-    spans.forEach(span => {
-        span.style.animationPlayState = isPlaying ? 'running' : 'paused';
-    });
-}
-
-// Call this when music plays/pauses
-this.audio.addEventListener('play', () => updateSoundwave(true));
-this.audio.addEventListener('pause', () => updateSoundwave(false));
