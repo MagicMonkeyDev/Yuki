@@ -46,9 +46,22 @@ body::after {
 
 /* Terminal Styles */
 .terminal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    height: 70vh;
+    background: rgba(26, 27, 36, 0.85);
+    border: 2px solid #ff79c6;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 121, 198, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    z-index: 1;
 }
 
 .terminal-output {

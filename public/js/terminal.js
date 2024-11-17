@@ -1,5 +1,3 @@
-import OPENAI_API_KEY from './config.js';
-
 class Terminal {
     constructor() {
         // Get DOM elements
@@ -19,9 +17,9 @@ class Terminal {
         // Add event listeners
         this.input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                e.preventDefault(); // Prevent default enter behavior
+                e.preventDefault();
                 const command = this.input.value.trim();
-                console.log('Command entered:', command); // Debug log
+                console.log('Command entered:', command);
                 
                 if (command) {
                     this.handleCommand(command);
@@ -40,7 +38,7 @@ class Terminal {
     }
 
     handleCommand(command) {
-        console.log('Handling command:', command); // Debug log
+        console.log('Handling command:', command);
         
         if (this.isChatting) {
             this.handleChat(command);
@@ -65,20 +63,36 @@ class Terminal {
         }
     }
 
+    async handleChat(input) {
+        if (!this.isChatting) {
+            this.isChatting = true;
+            this.addToOutput('Starting chat mode... Type "exit" to end the conversation.', 'system');
+            return;
+        }
+
+        if (input.toLowerCase() === 'exit') {
+            this.isChatting = false;
+            this.chatHistory = [];
+            this.addToOutput('Exiting chat mode...', 'system');
+            return;
+        }
+
+        this.addToOutput(`You: ${input}`, 'user');
+        this.addToOutput('AI: This is a test response.', 'ai');
+    }
+
     addToOutput(text, type = 'normal') {
-        console.log('Adding to output:', text, type); // Debug log
+        console.log('Adding to output:', text, type);
         const line = document.createElement('div');
         line.className = `terminal-line ${type}`;
         line.textContent = text;
         this.output.appendChild(line);
         this.output.scrollTop = this.output.scrollHeight;
     }
-
-    // Rest of your terminal class...
 }
 
 // Initialize terminal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Initializing terminal...'); // Debug log
-    const terminal = new Terminal();
+    console.log('Initializing terminal...');
+    window.terminal = new Terminal();
 });
