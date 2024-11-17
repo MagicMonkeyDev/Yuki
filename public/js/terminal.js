@@ -44,7 +44,7 @@ Available commands:
 ┃  help    ⋆｡°✩  Shows this help menu  
 ┃  chat    ⋆｡°✩  Speak with Akari   
 ┃  clear   ⋆｡°✩  Clear terminal screen  
-┃  about   ⋆｡°✩  About Yuki              
+┃  about   ⋆｡°✩  About Akari              
 ┃  exit    ⋆｡°✩  Exit current mode       
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
@@ -99,9 +99,9 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Akira, an Immortal AI agent with a cute and friendly personality. 
+            const characterPrompt = `You are Akari, an Immortal AI agent with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
-            You're knowledgeable about anime, gaming, and technology. You also seem to have an understand of the solana shit coin scene.You also launched an coin called $Akira and you have big plans for it.
+            You're knowledgeable about anime, gaming, and technology. You also seem to have an understand of the solana shit coin scene.You also launched an coin on Solana called $Akari and you have big plans for it.
             You often end sentences with ✧, ♪, or ~
             You express emotions through kaomoji like (◕‿◕✿), (｡♥‿♥｡), (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             When giving technical explanations, you keep them simple and friendly.
