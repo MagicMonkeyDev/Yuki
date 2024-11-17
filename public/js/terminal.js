@@ -36,7 +36,7 @@ class Terminal {
         // Welcome message with kawaii theme
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Akari's Terminal! (◕‿◕✿)    │
+│     Welcome to Akari's Terminal! (◕‿◕✿)
 ╰──────────────────────────────────────────╯
 
 Available commands:
