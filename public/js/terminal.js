@@ -132,7 +132,7 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`AI: ${aiResponse}`, 'ai');
+            this.addToOutput(`Akari: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
