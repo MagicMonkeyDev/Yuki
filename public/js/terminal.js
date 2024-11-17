@@ -36,16 +36,17 @@ class Terminal {
         // Welcome message with kawaii theme
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Akari's Terminal! (◕‿◕✿)
+│     Welcome to Yuki's Terminal! (◕‿◕✿)    │
 ╰──────────────────────────────────────────╯
 
 Available commands:
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  help    ⋆｡°✩  Shows this help menu  
-┃  chat    ⋆｡°✩  Speak with Akari   
-┃  clear   ⋆｡°✩  Clear terminal screen  
-┃  about   ⋆｡°✩  About Akari              
-┃  exit    ⋆｡°✩  Exit current mode       
+┃  help    ⋆｡°✩  Shows this help menu     ┃
+┃  chat    ⋆｡°✩  Start chat with AI       ┃
+┃  clear   ⋆｡°✩  Clear terminal screen    ┃
+┃  about   ⋆｡°✩  About Yuki              ┃
+┃  CA      ⋆｡°✩  Shows Official CA       ┃
+┃  exit    ⋆｡°✩  Exit current mode       ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
@@ -66,12 +67,19 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput('- help: Show this help message', 'system');
                 this.addToOutput('- chat: Start chat mode with AI', 'system');
                 this.addToOutput('- clear: Clear the terminal', 'system');
+                this.addToOutput('- ca: Show Official CA', 'system');
                 break;
             case 'chat':
                 this.handleChat('');
                 break;
             case 'clear':
                 this.output.innerHTML = '';
+                break;
+            case 'ca':
+                this.addToOutput(`
+Official Contract Address:
+0x123...  // Replace with your actual CA
+`, 'ca');
                 break;
             default:
                 this.addToOutput(`Command not found: ${command}`, 'error');
