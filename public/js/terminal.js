@@ -36,13 +36,13 @@ class Terminal {
         // Welcome message with kawaii theme
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Akari Terminal! (◕‿◕✿)    
+│     Welcome to Sakara Terminal! (◕‿◕✿)    
 ╰──────────────────────────────────────────╯
 
 Available commands:
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃  help    ⋆｡°✩  Shows this help menu     
-┃  chat    ⋆｡°✩  Chat with Akari      
+┃  chat    ⋆｡°✩  Chat with Sakara      
 ┃  clear   ⋆｡°✩  Clear terminal screen    
 ┃  exit    ⋆｡°✩  Exit current mode       
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -63,7 +63,7 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             case 'help':
                 this.addToOutput('Available commands:', 'system');
                 this.addToOutput('- help: Show this help message', 'system');
-                this.addToOutput('- chat: Start chat mode with AI', 'system');
+                this.addToOutput('- chat: Start chat mode with Sakara', 'system');
                 this.addToOutput('- clear: Clear the terminal', 'system');
                 this.addToOutput('- exit: Exit current mode', 'system');
                 break;
