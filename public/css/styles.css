@@ -654,18 +654,20 @@ body {
     top: 46%;
     transform: translateY(-50%);
     z-index: 1;
-    width: 150px;
+    width: 120px;
 }
 
 .left-side-image img {
     width: 100%;
     height: auto;
     opacity: 0.9;
+    transition: all 0.3s ease;
 }
 
-/* Optional: Add subtle hover effect */
+/* Optional: Add hover effect */
 .left-side-image:hover {
     filter: drop-shadow(0 0 10px rgba(137, 207, 240, 0.3));
+    transform: translateY(-50%) scale(1.05);
 }
 
 .terminal-input:focus {
