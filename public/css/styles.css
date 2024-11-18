@@ -1013,3 +1013,23 @@ body {
     border-color: #00ff88;
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
 }
+
+.dexscreener-logo {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-button.dexscreener {
+    background: rgba(26, 27, 36, 0.9);
+}
+
+.social-button.dexscreener:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.social-button.dexscreener:hover .dexscreener-logo {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
