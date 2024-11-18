@@ -6,7 +6,7 @@ body {
     color: #f8f8f2;
     height: 100vh;
     overflow: hidden;
-    background-image: url('https://i.imgur.com/mIY9SRj.jpeg');
+    background-image: url('https://i.imgur.com/MnML5hm.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://i.imgur.com/mIY9SRj.jpeg'); /* Replace with your image path */
+    background-image: url('https://i.imgur.com/MnML5hm.png'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
