@@ -94,7 +94,7 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 
         try {
             this.addToOutput(`You: ${input}`, 'user');
-            this.addToOutput('AI is typing...', 'system');
+            this.addToOutput('Sakara is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
@@ -135,7 +135,7 @@ Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Akari: ${aiResponse}`, 'ai');
+            this.addToOutput(`Sakara: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
