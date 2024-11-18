@@ -998,3 +998,18 @@ body {
     box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
     transform: translateY(-2px);
 }
+
+.social-button.dexscreener svg {
+    width: 20px;  /* Adjust size as needed */
+    height: 20px;
+    fill: #ff79c6;
+}
+
+.social-button.dexscreener:hover svg {
+    fill: #00ff88;  /* DexScreener's green color */
+}
+
+.social-button.dexscreener:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
