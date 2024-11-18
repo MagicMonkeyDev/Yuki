@@ -968,7 +968,7 @@ body {
     padding: 12px 20px;
     backdrop-filter: blur(5px);
     z-index: 999;
-    box-shadow: 0 0 15px rgba(137, 207, 240, 0.3);
+    box-shadow: 0 0 15px rgba(137, 207, 240, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -998,7 +998,7 @@ body {
 /* Hover effect */
 .clock-container:hover {
     border-color: #A5D8F3;
-    box-shadow: 0 0 20px rgba(165, 216, 243, 0.3);
+    box-shadow: 0 0 20px rgba(137, 207, 240, 0.3);
     transform: translateY(-2px);
 }
 
