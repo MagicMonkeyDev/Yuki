@@ -2,7 +2,7 @@ class SimpleAudioPlayer {
     constructor() {
         // Create audio element
         this.audio = new Audio();
-        this.audio.src = 'music/Akari.mp3'; // Updated path
+        this.audio.src = 'music/Akari1.mp3'; // Updated path
         this.audio.volume = 0.2;
         this.audio.loop = true;
 
