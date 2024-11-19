@@ -654,7 +654,7 @@ body {
     top: 46%;
     transform: translateY(-50%);
     z-index: 1;
-    width: 100px;
+    width: 130px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
