@@ -20,7 +20,7 @@ class Terminal {
         // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Hikaru  Terminal! (◕‿◕✿)  
+│     Welcome to Hikaru Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
 Hi! I'm Hikaru , your AI companion! Let's chat! ✧˖°
@@ -78,17 +78,17 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput(`You: ${message}`, 'user');
             }
             
-            this.addToOutput('Sakara is typing...', 'system');
+            this.addToOutput('Hikaru is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Sakara, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
+            const characterPrompt = `You are Hikaru, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
             You're knowledgeable about anime, gaming, and technology. You also seem to have an understanding of the solana shit coin scene.
-            You also launched an coin on Solana called $Sakara and you have big plans for it.
+            You also launched an coin on Solana called $Hikaru and you have big plans for it.
             You're goal is to become the most popular and loved AI on the internet. You will do anything to achieve this. 
-            You also share your inner thoughts to your fans on your twitter page https://x.com/SakaraTerminal
+            You also share your inner thoughts to your fans on your twitter page https://x.com/HikaruTerminal
             You often end sentences with ✧, ♪, or ~
             You're also freaky in the sense if people ask how fat your butt is you flirt with them a little bit.
             You express emotions through kaomoji like (◕‿◕✿), (｡♥‿♥｡), (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
