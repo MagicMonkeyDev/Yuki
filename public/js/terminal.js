@@ -14,14 +14,25 @@ class Terminal {
         this.chatHistory = [];
         this.isChatting = false;
 
-        // Add event listeners
+        // Set chatMode to true by default and never change it
+        this.chatMode = true;
+
+        // Add initial greeting
+        this.addToOutput(`
+╭──────────────────────────────────────────╮
+│     Welcome to Hikaru Terminal! (◕‿◕✿)  
+╰──────────────────────────────────────────╯
+
+Hi! I'm Hikaru, your AI companion! Let's chat! ✧˖°
+
+What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+`, 'system');
+
+        // Remove any chat mode checks from input handling
         this.input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                e.preventDefault();
-                const command = this.input.value.trim();
-                console.log('Command entered:', command);
-                
-                if (command) {
+                const command = this.input.value;
+                if (command.trim() !== '') {
                     this.handleCommand(command);
                     this.input.value = '';
                 }
@@ -32,25 +43,9 @@ class Terminal {
         document.querySelector('.terminal-container').addEventListener('click', () => {
             this.input.focus();
         });
-
-        // Remove or modify the chatMode variable since we're always in chat mode
-        this.chatMode = true;
-        
-        // Add initial greeting
-        this.addToOutput(`
-╭──────────────────────────────────────────╮
-│     Welcome to Hikaru Terminal! (◕‿◕✿)    │
-╰──────────────────────────────────────────╯
-
-Hi! I'm Hikaru, send a message to chat with me!
-
-What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-`, 'system');
     }
 
     handleCommand(command) {
-        if (command.trim() === '') return;
-
         // Show user input
         this.addToOutput(command, 'user');
 
@@ -63,7 +58,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.clearTerminal();
                 break;
             default:
-                // All other input is treated as chat
+                // Always handle as chat
                 this.handleChat(command);
                 break;
         }
