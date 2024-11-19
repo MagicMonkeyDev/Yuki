@@ -120,7 +120,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Sakara: ${aiResponse}`, 'ai');
+            this.addToOutput(`Hikaru: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
