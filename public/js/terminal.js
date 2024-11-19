@@ -33,48 +33,39 @@ class Terminal {
             this.input.focus();
         });
 
-        // Welcome message with kawaii theme
+        // Remove or modify the chatMode variable since we're always in chat mode
+        this.chatMode = true;
+        
+        // Add initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Sakara Terminal! (◕‿◕✿)    
+│     Welcome to Hikaru Terminal! (◕‿◕✿)    │
 ╰──────────────────────────────────────────╯
 
-Available commands:
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  help    ⋆｡°✩  Shows this help menu     
-┃  chat    ⋆｡°✩  Chat with Sakara      
-┃  clear   ⋆｡°✩  Clear terminal screen    
-┃  exit    ⋆｡°✩  Exit current mode       
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+Hi! I'm Hikaru, send a message to chat with me!
 
-Type a command to begin! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
     }
 
     handleCommand(command) {
-        console.log('Handling command:', command);
-        
-        if (this.isChatting) {
-            this.handleChat(command);
-            return;
-        }
+        if (command.trim() === '') return;
 
+        // Show user input
+        this.addToOutput(command, 'user');
+
+        // Handle special commands
         switch (command.toLowerCase()) {
             case 'help':
-                this.addToOutput('Available commands:', 'system');
-                this.addToOutput('- help: Show this help message', 'system');
-                this.addToOutput('- chat: Start chat mode with Sakara', 'system');
-                this.addToOutput('- clear: Clear the terminal', 'system');
-                this.addToOutput('- exit: Exit current mode', 'system');
-                break;
-            case 'chat':
-                this.handleChat('');
+                this.showHelp();
                 break;
             case 'clear':
-                this.output.innerHTML = '';
+                this.clearTerminal();
                 break;
             default:
-                this.addToOutput(`Command not found: ${command}`, 'error');
+                // All other input is treated as chat
+                this.handleChat(command);
+                break;
         }
     }
 
