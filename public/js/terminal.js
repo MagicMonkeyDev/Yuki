@@ -17,13 +17,13 @@ class Terminal {
         // Set chatMode to true by default and never change it
         this.chatMode = true;
 
-        // Add initial greeting
+        // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Hikaru Terminal! (◕‿◕✿)  
+│     Welcome to Hikaru  Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
-Hi! I'm Hikaru, your AI companion! Let's chat! ✧˖°
+Hi! I'm Hikaru , your AI companion! Let's chat! ✧˖°
 
 What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
@@ -46,10 +46,12 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     }
 
     handleCommand(command) {
+        if (command.trim() === '') return;
+
         // Show user input
         this.addToOutput(command, 'user');
 
-        // Handle special commands
+        // Handle commands
         switch (command.toLowerCase()) {
             case 'help':
                 this.showHelp();
@@ -58,28 +60,21 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.clearTerminal();
                 break;
             default:
-                // Always handle as chat
-                this.handleChat(command);
+                // Direct to AI response without "starting chat mode" message
+                this.sendMessageToAI(command);
                 break;
         }
     }
 
-    async handleChat(input) {
-        if (!this.isChatting) {
-            this.isChatting = true;
-            this.addToOutput('Starting chat mode... Type "exit" to end the conversation.', 'system');
-            return;
-        }
+    handleChat(message) {
+        // Remove the "starting chat mode" message
+        // Just send the message directly to the AI
+        this.sendMessageToAI(message);
+    }
 
-        if (input.toLowerCase() === 'exit') {
-            this.isChatting = false;
-            this.chatHistory = [];
-            this.addToOutput('Exiting chat mode...', 'system');
-            return;
-        }
-
+    async sendMessageToAI(message) {
         try {
-            this.addToOutput(`You: ${input}`, 'user');
+            this.addToOutput(`You: ${message}`, 'user');
             this.addToOutput('Sakara is typing...', 'system');
 
             // Get the current URL
@@ -106,7 +101,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                     messages: [
                         { role: "system", content: characterPrompt },
                         ...this.chatHistory,
-                        { role: "user", content: input }
+                        { role: "user", content: message }
                     ]
                 })
             });
@@ -126,7 +121,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 
             // Update chat history
             this.chatHistory.push(
-                { role: "user", content: input },
+                { role: "user", content: message },
                 { role: "assistant", content: aiResponse }
             );
 
