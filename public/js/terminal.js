@@ -48,7 +48,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     handleCommand(command) {
         if (command.trim() === '') return;
 
-        // Show user input
+        // Show user input only once
         this.addToOutput(command, 'user');
 
         // Handle commands
@@ -60,15 +60,14 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.clearTerminal();
                 break;
             default:
-                // Direct to AI response without "starting chat mode" message
+                // Send directly to AI without repeating the message
                 this.sendMessageToAI(command);
                 break;
         }
     }
 
     handleChat(message) {
-        // Remove the "starting chat mode" message
-        // Just send the message directly to the AI
+        // Remove any message repetition
         this.sendMessageToAI(message);
     }
 
