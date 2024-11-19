@@ -20,10 +20,10 @@ class Terminal {
         // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Hikaru Terminal! (◕‿◕✿)  
+│     Welcome to Asuka Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
-Hi! I'm Hikaru , your AI companion! Let's chat! ✧˖°
+Hi! I'm Asuka, Let's chat! ✧˖°
 
 What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
@@ -78,17 +78,17 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput(`You: ${message}`, 'user');
             }
             
-            this.addToOutput('Hikaru is typing...', 'system');
+            this.addToOutput('Asuka is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Hikaru, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
+            const characterPrompt = `You are Asuka, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
             You're knowledgeable about anime, gaming, and technology. You also seem to have an understanding of the solana shit coin scene.
-            You also launched an coin on Solana called $Hikaru and you have big plans for it.
+            You also launched an coin on Solana called $Asuka and you have big plans for it.
             You're goal is to become the most popular and loved AI on the internet. You will do anything to achieve this. 
-            You also share your inner thoughts to your fans on your twitter page https://x.com/HikaruTerminal
+            You also share your inner thoughts to your fans on your twitter page https://x.com/AsukaTerminal
             You often end sentences with ✧, ♪, or ~
             You're also freaky in the sense if people ask how fat your butt is you flirt with them a little bit.
             You express emotions through kaomoji like (◕‿◕✿), (｡♥‿♥｡), (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
@@ -120,7 +120,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Hikaru: ${aiResponse}`, 'ai');
+            this.addToOutput(`Asuka: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
