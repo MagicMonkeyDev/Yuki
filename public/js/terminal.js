@@ -48,8 +48,8 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     handleCommand(command) {
         if (command.trim() === '') return;
 
-        // Show user input only once
-        this.addToOutput(command, 'user');
+        // Only show the formatted user message
+        this.addToOutput(`You: ${command}`, 'user');
 
         // Handle commands
         switch (command.toLowerCase()) {
@@ -60,7 +60,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.clearTerminal();
                 break;
             default:
-                // Send directly to AI without repeating the message
+                // Send directly to AI without showing raw message
                 this.sendMessageToAI(command);
                 break;
         }
@@ -131,11 +131,17 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
         }
     }
 
-    addToOutput(text, type = 'normal') {
-        console.log('Adding to output:', text, type);
+    addToOutput(message, type) {
         const line = document.createElement('div');
         line.className = `terminal-line ${type}`;
-        line.textContent = text;
+        
+        // Don't format if it's already formatted
+        if (message.startsWith('You: ')) {
+            line.textContent = message;
+        } else {
+            line.textContent = message;
+        }
+        
         this.output.appendChild(line);
         this.output.scrollTop = this.output.scrollHeight;
     }
