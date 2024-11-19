@@ -48,7 +48,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     handleCommand(command) {
         if (command.trim() === '') return;
 
-        // Only show the formatted user message
+        // Only show the formatted user message once
         this.addToOutput(`You: ${command}`, 'user');
 
         // Handle commands
@@ -60,8 +60,8 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.clearTerminal();
                 break;
             default:
-                // Send directly to AI without showing raw message
-                this.sendMessageToAI(command);
+                // Send to AI without adding another user message
+                this.sendMessageToAI(command, false);
                 break;
         }
     }
@@ -71,9 +71,13 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
         this.sendMessageToAI(message);
     }
 
-    async sendMessageToAI(message) {
+    async sendMessageToAI(message, showUserMessage = false) {
         try {
-            this.addToOutput(`You: ${message}`, 'user');
+            // Only show user message if flag is true (which we set to false above)
+            if (showUserMessage) {
+                this.addToOutput(`You: ${message}`, 'user');
+            }
+            
             this.addToOutput('Sakara is typing...', 'system');
 
             // Get the current URL
