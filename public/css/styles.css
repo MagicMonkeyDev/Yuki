@@ -921,13 +921,14 @@ body {
     right: 20px;
     width: 300px;
     background: rgba(26, 27, 36, 0.85);
-    border: 2px solid var(--pastel-yellow);
+    border: 3px solid var(--pastel-yellow);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     z-index: 999;
     box-shadow: 0 0 30px rgba(255, 229, 180, 0.3);
     padding: 20px;
     color: #f8f8f2;
+    transition: all 0.3s ease;
 }
 
 .info-header {
@@ -937,6 +938,7 @@ body {
     text-align: center;
     border-bottom: 2px solid rgba(255, 229, 180, 0.3);
     padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 229, 180, 0.3);
 }
 
 .info-content {
@@ -962,6 +964,7 @@ body {
 .info-container:hover {
     border-color: var(--pastel-yellow-light);
     box-shadow: 0 0 35px rgba(255, 229, 180, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Command list styling */
