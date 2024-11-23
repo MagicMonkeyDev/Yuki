@@ -921,41 +921,113 @@ body {
     right: 20px;
     width: 300px;
     background: rgba(26, 27, 36, 0.95);
-    border: 3px solid #FFE5B4;
-    border-radius: 15px;
+    border: none; /* Removed border */
+    border-radius: 20px;
     backdrop-filter: blur(10px);
     z-index: 999;
-    box-shadow: 0 0 30px rgba(255, 229, 180, 0.3);
-    padding: 20px;
+    box-shadow: 0 8px 32px rgba(255, 229, 180, 0.4);
+    padding: 25px;
     color: #f8f8f2;
+    transform: translateY(0);
+    transition: all 0.3s ease;
 }
 
 .info-header {
-    color: #FFE5B4;
-    font-size: 1.2em;
-    margin-bottom: 15px;
     text-align: center;
-    border-bottom: 2px solid rgba(255, 229, 180, 0.3);
-    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.info-content {
+.info-title {
+    color: var(--pastel-yellow);
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(255, 229, 180, 0.3);
+}
+
+.info-subtitle {
+    color: var(--pastel-yellow-light);
     font-size: 0.9em;
-    line-height: 1.6;
+    opacity: 0.8;
 }
 
-.info-content p {
+.info-section {
+    background: rgba(255, 229, 180, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.info-section-title {
+    color: var(--pastel-yellow);
+    font-size: 1.1em;
     margin-bottom: 10px;
-}
-
-.info-highlight {
-    color: #FFE5B4;
     font-weight: bold;
 }
 
-.info-emoji {
+.info-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: rgba(255, 229, 180, 0.1);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    margin-right: 10px;
     font-size: 1.2em;
-    margin: 0 3px;
+}
+
+.feature-text {
+    color: #f8f8f2;
+}
+
+.command-list {
+    display: grid;
+    gap: 8px;
+}
+
+.command-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 229, 180, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.command-item:hover {
+    background: rgba(255, 229, 180, 0.1);
+    transform: translateX(5px);
+}
+
+.command-name {
+    color: var(--pastel-yellow);
+    font-family: 'Courier New', monospace;
+}
+
+.command-desc {
+    color: var(--pastel-yellow-light);
+    font-size: 0.9em;
+}
+
+/* Hover effect for entire container */
+.info-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(255, 229, 180, 0.5);
 }
 
 .clock-container {
