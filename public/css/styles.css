@@ -1074,3 +1074,22 @@ body {
     transform: scale(1.1);
     filter: brightness(1.2);
 }
+
+.social-button.github:hover {
+    border-color: var(--pastel-green-light);
+    box-shadow: 0 0 20px rgba(152, 216, 177, 0.4);
+}
+
+.social-button.github:hover svg {
+    fill: var(--pastel-green-light);
+}
+
+/* Optional: Add specific GitHub hover color */
+.social-button.github:hover {
+    border-color: #6e5494;  /* GitHub purple */
+    box-shadow: 0 0 20px rgba(110, 84, 148, 0.4);
+}
+
+.social-button.github:hover svg {
+    fill: #6e5494;  /* GitHub purple */
+}
