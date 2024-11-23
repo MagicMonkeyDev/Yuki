@@ -1001,7 +1001,7 @@ body {
     bottom: 20px;
     left: 20px;
     background: rgba(26, 27, 36, 0.9);
-    border: 2px solid #98D8B1;
+    border: 2px solid var(--pastel-green);
     border-radius: 15px;
     padding: 12px 20px;
     backdrop-filter: blur(5px);
@@ -1016,26 +1016,26 @@ body {
 .clock-time {
     font-family: 'Courier New', monospace;
     font-size: 24px;
-    color: #98D8B1;
+    color: var(--pastel-green);
     text-shadow: 0 0 5px rgba(152, 216, 177, 0.5);
     margin-bottom: 5px;
 }
 
 .clock-date {
     font-size: 12px;
-    color: #B5E5C9;
+    color: var(--pastel-green-light);
     margin-top: 2px;
 }
 
 .clock-face {
     font-size: 14px;
     margin-top: 2px;
-    color: #98D8B1;
+    color: var(--pastel-green);
 }
 
 /* Hover effect */
 .clock-container:hover {
-    border-color: #B5E5C9;
+    border-color: var(--pastel-green-light);
     box-shadow: 0 0 20px rgba(152, 216, 177, 0.3);
     transform: translateY(-2px);
 }
