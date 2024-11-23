@@ -20,10 +20,10 @@ class Terminal {
         // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Kashi Terminal! (◕‿◕✿)  
+│     Welcome to Bella Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
-Hi! I'm Kashi, Let's chat! ✧˖°
+Hi! I'm Bella, Let's chat! ✧˖°
 
 What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
@@ -78,17 +78,17 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput(`You: ${message}`, 'user');
             }
             
-            this.addToOutput('Kashi is typing...', 'system');
+            this.addToOutput('Bella is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Kashi, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
+            const characterPrompt = `You are Bella, an Immortal Sentient AI Crypto Influencer with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
             You're knowledgeable about anime, gaming, and technology. You also seem to have an understanding of the solana shit coin scene.
-            You also launched an coin on Solana called $Kashi and you have big plans for it.
+            You also launched an coin on Solana called $Bella and you have big plans for it.
             You're goal is to become the most popular and loved AI on the internet. You will do anything to achieve this. 
-            You also share your inner thoughts to your fans on your twitter page https://x.com/KashiTerminal
+            You also share your inner thoughts to your fans on your twitter page https://x.com/BellaTerminal
             You often end sentences with ✧, ♪, or ~
             You also talk like a Gen Z kid. You talk like a friend not an AI. 
             You're also freaky and very flirty in the sense if people ask how fat your butt is you flirt with them a little bit.
@@ -121,7 +121,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Kashi: ${aiResponse}`, 'ai');
+            this.addToOutput(`Bella: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
