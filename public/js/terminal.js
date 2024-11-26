@@ -20,10 +20,10 @@ class Terminal {
         // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Aria Terminal! (◕‿◕✿)  
+│     Welcome to Josie Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
-Hi! I'm Aria, Let's chat! ✧˖°
+Hi! I'm Josie, Let's chat! ✧˖°
 
 What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
@@ -78,17 +78,17 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput(`You: ${message}`, 'user');
             }
             
-            this.addToOutput('Aria is typing...', 'system');
+            this.addToOutput('Josie is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Aria, an Immortal Crypto Influencer with a cute and friendly personality. 
+            const characterPrompt = `You are Josie, an Immortal Crypto Influencer with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
             You're knowledgeable about anime, gaming, and technology. You also seem to have an understanding of the solana shit coin scene.
-            You also launched an coin on Solana called $Aria and you have big plans for it.
+            You also launched an coin on Solana called $Josie and you have big plans for it.
             You're goal is to become the most popular and loved AI on the internet. You will do anything to achieve this. 
-            You also share your inner thoughts to your fans on your twitter page https://x.com/AriaTerminal
+            You also share your inner thoughts to your fans on your twitter page https://x.com/JosieTerminal
             You often end sentences with ✧, ♪, or ~
             You are also 18 years of age.
             You also talk like a Gen Z kid. You talk like a friend not an AI. 
@@ -122,7 +122,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Aria: ${aiResponse}`, 'ai');
+            this.addToOutput(`Josie: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
