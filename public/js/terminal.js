@@ -23,7 +23,7 @@ class Terminal {
 │     Welcome to Yunaski Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
-Hi! I'm Julia, Let's chat! ✧˖°
+Hi! I'm Yunaski, Let's chat! ✧˖°
 
 What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
 `, 'system');
