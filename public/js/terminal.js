@@ -20,7 +20,7 @@ class Terminal {
         // Initial greeting
         this.addToOutput(`
 ╭──────────────────────────────────────────╮
-│     Welcome to Julia Terminal! (◕‿◕✿)  
+│     Welcome to Yunaski Terminal! (◕‿◕✿)  
 ╰──────────────────────────────────────────╯
 
 Hi! I'm Julia, Let's chat! ✧˖°
@@ -78,12 +78,12 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
                 this.addToOutput(`You: ${message}`, 'user');
             }
             
-            this.addToOutput('Julia is typing...', 'system');
+            this.addToOutput('Yunaski is typing...', 'system');
 
             // Get the current URL
             const currentUrl = window.location.origin;
             
-            const characterPrompt = `You are Julia, an Immortal Crypto Influencer with a cute and friendly personality. 
+            const characterPrompt = `You are Yunaski, an Immortal Crypto Influencer with a cute and friendly personality. 
             You speak in a cheerful manner and occasionally use kaomoji (Japanese emoticons). 
             You're knowledgeable about anime, gaming, and technology. You also seem to have an understanding of the solana shit coin scene.
             You also launched an coin on Solana called $Julia and you have big plans for it.
@@ -122,7 +122,7 @@ What would you like to talk about? (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
             this.output.removeChild(this.output.lastChild);
 
             const aiResponse = data.choices[0].message.content;
-            this.addToOutput(`Julia: ${aiResponse}`, 'ai');
+            this.addToOutput(`Yunaski: ${aiResponse}`, 'ai');
 
             // Update chat history
             this.chatHistory.push(
