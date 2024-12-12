@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', monospace;
-    color: var(--pastel-blue);
+    color: #f8f8f2;
     height: 100vh;
     overflow: hidden;
     background-image: url('https://i.imgur.com/60T5DcR.jpeg');
@@ -111,7 +111,7 @@ body::after {
 .terminal-input {
     background: transparent;
     border: none;
-    color: var(--pastel-blue);
+    color: #f8f8f2;
     font-family: 'Courier New', monospace;
     font-size: 16px;
     width: 100%;
@@ -126,7 +126,7 @@ body::after {
 .terminal-line {
     margin-bottom: 5px;
     word-wrap: break-word;
-    color: var(--pastel-blue);
+    color: #f8f8f2;
 }
 
 /* Music Player Styles */
@@ -292,7 +292,7 @@ body::after {
 
 .snowflake {
     position: absolute;
-    background: var(--pastel-blue);
+    background: #fff;
     border-radius: 50%;
     pointer-events: none;
     transition: transform 0.1s ease;
@@ -953,7 +953,7 @@ body {
 .info-content {
     font-size: 0.9em;
     line-height: 1.6;
-    color: var(--pastel-blue);
+    color: #f8f8f2;
 }
 
 .info-content p {
@@ -1002,7 +1002,7 @@ body {
 }
 
 .command-desc {
-    color: var(--pastel-blue-light);
+    color: #f8f8f2;
     font-size: 0.9em;
 }
 
