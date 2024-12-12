@@ -1,9 +1,17 @@
+/* Base Colors */
+:root {
+    --pastel-blue: #89CFF0;      /* Main pastel blue (was white #ffffff) */
+    --pastel-blue-light: #A5D8F3; /* Lighter shade */
+    --pastel-blue-dark: #7AB8D9;  /* Darker shade */
+    --pastel-blue-glow: rgba(137, 207, 240, 0.3); /* Glow effect */
+}
+
 /* Base Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', monospace;
-    color: #f8f8f2;
+    color: var(--pastel-blue);
     height: 100vh;
     overflow: hidden;
     background-image: url('https://i.imgur.com/60T5DcR.jpeg');
@@ -103,7 +111,7 @@ body::after {
 .terminal-input {
     background: transparent;
     border: none;
-    color: #f8f8f2;
+    color: var(--pastel-blue);
     font-family: 'Courier New', monospace;
     font-size: 16px;
     width: 100%;
@@ -118,6 +126,7 @@ body::after {
 .terminal-line {
     margin-bottom: 5px;
     word-wrap: break-word;
+    color: var(--pastel-blue);
 }
 
 /* Music Player Styles */
@@ -283,7 +292,7 @@ body::after {
 
 .snowflake {
     position: absolute;
-    background: #fff;
+    background: var(--pastel-blue);
     border-radius: 50%;
     pointer-events: none;
     transition: transform 0.1s ease;
@@ -944,6 +953,7 @@ body {
 .info-content {
     font-size: 0.9em;
     line-height: 1.6;
+    color: var(--pastel-blue);
 }
 
 .info-content p {
@@ -992,7 +1002,7 @@ body {
 }
 
 .command-desc {
-    color: var(--pastel-silver-light);
+    color: var(--pastel-blue-light);
     font-size: 0.9em;
 }
 
